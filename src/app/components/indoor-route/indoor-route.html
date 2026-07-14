@@ -1,0 +1,30 @@
+<h2>Indoor Navigation</h2>
+
+<input
+type="email"
+placeholder="Visitor Email"
+[(ngModel)]="email">
+
+<button (click)="getRoute()">
+
+Get Route
+
+</button>
+
+<hr>
+
+<h3>Route</h3>
+
+<p>{{route}}</p>
+
+<button (click)="recalculate()">
+
+Recalculate Route
+
+</button>
+
+<button (click)="speak()">
+
+Voice Navigation
+
+</button>

@@ -1,0 +1,46 @@
+.reception-container{
+    padding:30px;
+}
+
+.queue-card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+.queue-card h3{
+    color:#1565c0;
+    margin-bottom:15px;
+}
+
+.queue-card p{
+    margin:8px 0;
+}
+
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    cursor:pointer;
+    margin-right:8px;
+    font-weight:600;
+}
+
+.verify{
+    background:#2196f3;
+}
+
+.confirm{
+    background:#28a745;
+}
+
+.assign{
+    background:#ff9800;
+}
+
+button:hover{
+    opacity:.9;
+}

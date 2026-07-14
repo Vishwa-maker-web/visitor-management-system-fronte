@@ -1,0 +1,28 @@
+ <h2>Notifications</h2>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let n of notifications()">
+      <td>{{ n.id }}</td>
+      <td>{{ n.hostEmail }}</td>
+      <td>{{ n.message }}</td>
+      <td>{{ n.status }}</td>
+
+      <td>
+        <button (click)="read(n.id)">
+          Mark Read
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

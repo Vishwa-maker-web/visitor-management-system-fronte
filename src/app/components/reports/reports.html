@@ -1,0 +1,21 @@
+<h2 class="recent-title">Recent Visitors</h2>
+
+<table class="recent-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Purpose</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let visitor of recentVisitors()">
+            <td>{{visitor.name}}</td>
+            <td>{{visitor.purpose}}</td>
+            <td>{{visitor.email}}</td>
+            <td>{{visitor.phone}}</td>
+        </tr>
+    </tbody>
+</table>

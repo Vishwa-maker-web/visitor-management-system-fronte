@@ -1,0 +1,89 @@
+<div class="visitor-page">
+
+    <div class="top-bar">
+        <h1>Manage Visitors</h1>
+
+        <input
+            type="text"
+            placeholder="🔍 Search visitor..."
+        >
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>ID Number</th>
+                    <th>Purpose</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let visitor of visitors()">
+
+                    <td>{{visitor.id}}</td>
+                    <td>{{visitor.name}}</td>
+                    <td>{{visitor.email}}</td>
+                    <td>{{visitor.phone}}</td>
+                    <td>{{visitor.idNumber}}</td>
+                    <td>{{visitor.purpose}}</td>
+
+
+
+<td>
+    <button class="view" (click)="viewVisitor(visitor)">view</button>
+    <button class="delete" (click) = "completed(visitor)">Delete</button>
+</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div class="popup" *ngIf="showPopup">
+  <div class="popup-card">
+
+    <h2>Visitor Details</h2>
+
+    <p><b>Name:</b> {{selectedVisitor?.name}}</p>
+    <p><b>Email:</b> {{selectedVisitor?.email}}</p>
+    <p><b>Phone:</b> {{selectedVisitor?.phone}}</p>
+    <p><b>ID Number:</b> {{selectedVisitor?.idNumber}}</p>
+    <p><b>Purpose:</b> {{selectedVisitor?.purpose}}</p>
+
+    <button (click)="closePopup()">Close</button>
+
+  </div>
+</div>
+<div class="popup" *ngIf="showDeletePopup">
+  <div class="popup-card">
+
+    <h2>Interview Completed?</h2>
+
+    <p><b>Name:</b> {{deleteVisitor?.name}}</p>
+    <p><b>Purpose:</b> {{deleteVisitor?.purpose}}</p>
+
+    <br>
+
+    <button class="cancel" (click)="cancelDelete()">Cancel</button>
+
+    <button class="delete"
+            (click)="confirmDelete()"
+            style="margin-left:10px;">
+        Delete Visitor
+    </button>
+
+  </div>
+</div>
+
+
+    </div>
+
+</div>

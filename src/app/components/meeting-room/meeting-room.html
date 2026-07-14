@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Room</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let room of rooms()">
+      <td>{{ room.id }}</td>
+      <td>{{ room.roomName }}</td>
+      <td>
+        <span [ngClass]="{
+          'available': room.status === 'AVAILABLE',
+          'occupied': room.status === 'OCCUPIED',
+          'reserved': room.status === 'RESERVED'
+        }">
+          {{ room.status }}
+        </span>
+      </td>
+      <td>
+        <button (click)="occupy(room.roomName)">Occupy</button>
+        <button (click)="release(room.roomName)">Release</button>
+        <button (click)="extend(room.roomName)">Extend</button>
+        <button (click)="terminate(room.roomName)">Terminate</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

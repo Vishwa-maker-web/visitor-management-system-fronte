@@ -1,0 +1,23 @@
+<div class="reception-container">
+  <div class="queue-card" *ngFor="let visitor of visitors()">
+    <h3>{{ visitor.name }}</h3>
+
+    <p>Email: {{ visitor.email }}</p>
+    <p>Purpose: {{ visitor.purpose }}</p>
+    <p>Status: {{ visitor.status }}</p>
+<button class="verify"
+        (click)="verifyVisitor(visitor.email)">
+    Verify & Notify Host
+</button>
+
+<button class="confirm"
+        (click)="hostConfirm(visitor.email)">
+    Host Confirm
+</button>
+
+<button class="assign"
+        (click)="assignRoom(visitor.email)">
+    Assign Room
+</button>
+  </div>
+</div>

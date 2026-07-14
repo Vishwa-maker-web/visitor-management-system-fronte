@@ -1,0 +1,28 @@
+.recent-title{
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+.recent-table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgb(223, 219, 219);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.recent-table th{
+    background:#1565c0;
+    color:rgb(223, 116, 116);
+    padding:15px;
+}
+
+.recent-table td{
+    padding:15px;
+    border-bottom:1px solid #3f3d3d;
+}
+
+.recent-table tr:hover{
+    background:#d5d2d2;
+}

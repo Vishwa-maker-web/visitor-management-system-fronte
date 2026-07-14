@@ -1,0 +1,22 @@
+<div class="register-container">
+  <div class="register-card">
+
+    <h1>Visitor Registration</h1>
+    <p>Please fill in your details</p>
+
+    <input type="text" placeholder="Full Name" [(ngModel)]="visitor.name">
+
+    <input type="email" placeholder="Email Address" [(ngModel)]="visitor.email">
+
+    <input type="text" placeholder="Phone Number" [(ngModel)]="visitor.phone">
+
+    <input type="text" placeholder="Aadhaar Number" [(ngModel)]="visitor.idNumber">
+
+    <input type="text" placeholder="Purpose of Visit" [(ngModel)]="visitor.purpose">
+
+    <button (click)="register()">
+      Register Visitor
+    </button>
+
+  </div>
+</div>

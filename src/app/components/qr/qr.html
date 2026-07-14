@@ -1,0 +1,34 @@
+ <h2>Your QR Code</h2>
+
+<div *ngIf="qrPath">
+    <img [src]="qrPath" width="300">
+</div>
+
+<div *ngIf="!qrPath">
+    QR not found
+</div>
+
+<div class="note">
+    <strong>Instructions</strong><br><br>
+    • Please take a screenshot of this QR code.<br>
+    • Show this QR code to the security officer at the entrance.<br>
+    • The QR code will be scanned for entry verification.
+
+        <p class="info">
+        ⏳ After security verification, please wait until the receptionist
+        assigns your meeting room.
+    </p>
+
+    <button (click)="getNavigation()">
+        Get Navigation To Room
+    </button>
+
+    <p class="message">{{message}}</p>
+    
+</div>
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<h2> Audit Logs </h2>
+ <table>
+  <tr>
+    <th>Email</th>
+    <th>Event</th>
+    <th>Location</th>
+    <th>Time</th>
+  </tr>
+ <tr *ngFor="let log of logs()">
+  <td>{{log.visitorEmail}}</td>
+  <td>{{log.event}}</td>
+  <td>{{log.location}}</td>
+  <td>{{log.time}}</td>
+</tr>
+</table>

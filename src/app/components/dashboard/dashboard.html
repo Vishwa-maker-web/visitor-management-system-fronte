@@ -1,0 +1,52 @@
+<div class="dashboard">
+
+  <div class="sidebar">
+    <h2>Visitor MS</h2>
+
+    <a routerLink="/dashboard">🏠 Dashboard</a>
+    <a routerLink="/visitors">👥 Manage Visitors</a>
+    <a routerLink="/meeting-room">🏢 Meeting Rooms</a>
+    <a routerLink="/reception">🛎️ Reception</a>
+    <a routerLink="/notification">🔔 Notifications</a>
+    <a routerLink="/reports">📊 Reports</a>
+    <a routerLink="/audit-logs">📝 Audit Logs</a>
+    <a routerLink="/scanner">📡 Gate Verification</a>
+    <a routerLink="/">🚪 Logout</a>
+  </div>
+
+  <div class="content">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Total Visitors</h3>
+        <h2>{{summary()?.totalVisitors}}</h2>
+      </div>
+
+      <div class="card">
+        <h3>Active Visitors</h3>
+        <h2>{{summary()?.activeVisitors}}</h2>
+      </div>
+
+      <div class="card">
+        <h3>Restricted Visitors</h3>
+        <h2>{{summary()?.restrictedVisitors}}</h2>
+      </div>
+
+      <div class="card">
+        <h3>Timeout Visitors</h3>
+        <h2>{{summary()?.timeoutVisitors}}</h2>
+      </div>
+
+      <div class="card">
+        <h3>Available Rooms</h3>
+        <h2>{{summary()?.availableRooms}}</h2>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
