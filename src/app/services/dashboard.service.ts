@@ -8,12 +8,12 @@ export class DashboardService {
 
   private http = inject(HttpClient);
 
-  private api = 'http://localhost:4040/dashboard';
+  private api = 'http://13.206.110.245:4040/dashboard';
 
   getSummary() {
     return this.http.get(`${this.api}/summary`);
   }
 getReport() {
-  return this.http.get<any>('http://localhost:4040/api/visitors/reports');
+  return this.http.get<any>('http://13.206.110.245:4040/api/visitors/reports');
 }
 }

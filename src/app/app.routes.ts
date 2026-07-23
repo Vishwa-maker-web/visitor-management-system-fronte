@@ -14,11 +14,13 @@ import { Home } from './components/home/home';
 import { AdminLogin } from './components/admin-login/admin-login';
 import { Reports } from './components/reports/reports';
 import { AuditLogs } from './components/audit-logs/audit-logs';
+import { VisitorLogin } from './components/visitor-login/visitor-login';
 
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'dashboard', component: Dashboard },
   { path: 'register', component: RegisterVisitor },
+   { path: 'visitor-login', component: VisitorLogin }
   { path: 'visitors', component: VisitorList },
   { path: 'meeting-room', component: MeetingRoom },
   { path: 'notification', component: NotificationComponent },

@@ -39,4 +39,7 @@ register() {
     }
   });
 }
+goToLogin() {
+    this.router.navigate(['/visitor-login']);
+  }
 }

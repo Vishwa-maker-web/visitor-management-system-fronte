@@ -8,7 +8,7 @@ export class MeetingRoomService {
 
   private http = inject(HttpClient);
 
-  private api = 'http://localhost:4040/room';
+  private api = 'http://13.206.110.245:4040/room';
 
   getRooms() {
     return this.http.get<any[]>(`${this.api}/all`);

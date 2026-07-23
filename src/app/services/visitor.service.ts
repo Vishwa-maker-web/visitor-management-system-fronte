@@ -8,7 +8,7 @@ export class VisitorService {
 
   private http = inject(HttpClient);
 
-  private api = 'http://localhost:4040/api/visitors';
+  private api = 'http://13.206.110.245:4040/api/visitors';
 
   register(visitor: any) {
     return this.http.post(`${this.api}/register`, visitor, {
@@ -22,7 +22,7 @@ export class VisitorService {
 
   verifyOtp(data: any) {
   return this.http.post(
-    'http://localhost:4040/api/visitors/verify-otp',
+    'http://13.206.110.245:4040/api/visitors/verify-otp',
     data,
     { responseType: 'text' }
   );

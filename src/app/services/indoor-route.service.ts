@@ -8,7 +8,7 @@ export class IndoorRouteService {
 
   private http = inject(HttpClient);
 
-  private api = "http://localhost:4040/route";
+  private api = "http://13.206.110.245:4040/route";
 
   getRoute(email: string) {
     return this.http.get(this.api + "?email=" + email, {

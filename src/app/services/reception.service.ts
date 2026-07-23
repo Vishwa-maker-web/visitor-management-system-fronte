@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ReceptionService {
 
-  private api = 'http://localhost:4040/reception';
+  private api = 'http://13.206.110.245:4040/reception';
 
   constructor(private http: HttpClient) {}
 

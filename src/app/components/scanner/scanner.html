@@ -1,5 +1,7 @@
 <h2>Gate QR Scanner</h2>
 
-<zxing-scanner
-  (scanSuccess)="scanQr($event)">
-</zxing-scanner>
+<input
+  type="file"
+  accept="image/*"
+  capture="environment"
+  (change)="scanImage($event)">

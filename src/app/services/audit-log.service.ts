@@ -7,6 +7,6 @@ import { inject, Injectable } from '@angular/core';
 export class AuditLogService {
   private http = inject(HttpClient);
     getAuditLogs() {
-  return this.http.get<any[]>("http://localhost:4040/audit/all");
+  return this.http.get<any[]>("http://13.206.110.245:4040/audit/all");
 }
 }

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import jsQR from 'jsqr';
 
 @Component({
   selector: 'app-scanner',
   standalone: true,
-  imports: [ZXingScannerModule],
+  imports: [],
   templateUrl: './scanner.html',
   styleUrl: './scanner.css'
 })
@@ -14,6 +14,53 @@ export class Scanner {
   scanned = false;
 
   constructor(private http: HttpClient) {}
+
+  async scanImage(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+
+    const file = input.files[0];
+
+    const image = new Image();
+    image.src = URL.createObjectURL(file);
+
+    image.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      if (!ctx) {
+        alert('Canvas not supported');
+        return;
+      }
+
+      canvas.width = image.width;
+      canvas.height = image.height;
+
+      ctx.drawImage(image, 0, 0);
+
+      const imageData = ctx.getImageData(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      const code = jsQR(
+        imageData.data,
+        imageData.width,
+        imageData.height
+      );
+
+      if (code) {
+        this.scanQr(code.data);
+      } else {
+        alert('QR Code not detected');
+      }
+    };
+  }
 
   scanQr(qrData: string) {
 
@@ -41,11 +88,8 @@ export class Scanner {
       .replace('ID=', '')
       .trim();
 
-    console.log('Email:', email);
-    console.log('ID Number:', idNumber);
-
     this.http.post(
-      'http://localhost:4040/gate/scan',
+      'http://13.206.110.245:4040/gate/scan',
       null,
       {
         params: {
@@ -57,6 +101,7 @@ export class Scanner {
     ).subscribe({
       next: (response: string) => {
         alert(response);
+        this.scanned = false;
       },
       error: (error: any) => {
         console.log(error);

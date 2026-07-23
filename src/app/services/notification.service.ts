@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NotificationService {
 
-  private api = 'http://localhost:4040/notification';
+  private api = 'http://13.206.110.245:4040/notification';
 
   constructor(private http: HttpClient) {}
 
